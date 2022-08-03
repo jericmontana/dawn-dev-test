@@ -1,0 +1,45 @@
+/* *{
+        border: 1px dashed goldenrod;
+    } */
+    .collection-tabs .page-width{
+        border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+    }
+    /* For Collection Tab Styling */
+    .collection-tabs .collection-tab{
+        position: relative;
+        display: inline-block;
+        padding: 1rem 2rem;
+        cursor: pointer;
+
+    }
+    .collection-tabs .collection-tab:not(:last-of-type){
+            margin-right: 0.5rem;
+        }
+    /* For Underline */
+    .collection-tabs .collection-tab::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 0.25rem;
+            opacity: 0;
+            background-color: rgb(var(--color-base-accent-2));
+            -webkit-transition: opacity 0.5s ease-out;
+            -o-transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
+        }
+    .collection-tabs .collection-tab:hover::before{
+            opacity: 1;
+        }
+    /* For Text */
+    .collection-tabs .collection-tab a{
+            -webkit-transition: color 0.5s ease-out;
+            -o-transition: color 0.5s ease-out;
+            transition: color 0.5s ease-out;
+            font-weight: 600; 
+        }
+    .collection-tabs .collection-tab:hover a{
+            color: rgb(var(--color-base-accent-2));
+        }
+

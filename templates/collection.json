@@ -8,6 +8,12 @@
         "color_scheme": "background-1"
       }
     },
+    "collection-tabs": {
+      "type": "collection-tabs",
+      "settings": {
+
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -27,6 +33,7 @@
   },
   "order": [
     "banner",
+    "collection-tabs",
     "product-grid"
   ]
 }

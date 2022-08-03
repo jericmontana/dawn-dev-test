@@ -1,0 +1,60 @@
+{{ 'section-collection-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- assign collection_blocks = section.blocks | where: 'type', 'collection' -%}
+
+<div class="collection-tabs collection-tabs--{{ section.id }}">
+    <div class="page-width">
+        <div class="collection-tabs--wrapper">
+            {%- for block in collection_blocks -%}
+                <div class="collection-tab {% if forloop.first %}collection-tab--active{% endif %}">
+                    <a class="link link--text full-unstyled-link uppercase" href="{{ block.settings.collection.url }}" alt="{{ block.settings.collection.title | append: ' Collection' }}" title="{{ block.settings.collection.title | append: ' Collection' }}">{{ block.settings.collection.title | escape }}</a>
+                </div>
+            {%- endfor -%}
+        </div>
+        
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Collection Tabs",
+        "tag": "section",
+        "settings": [
+        
+        ],
+        "blocks":[
+            {
+                "type": "collection",
+                "name": "Collection",
+                "settings": [
+                    {
+                        "type": "collection",
+                        "id": "collection",
+                        "label": "Collection"
+                    }
+                ]
+            }
+
+        ],
+        "presets":[
+            {
+                "name": "Collection Tabs",
+                "category": "a",
+                "blocks":[
+                    {
+                        "type": "collection"
+                    },
+                    {
+                        "type": "collection"
+                    },
+                    {
+                        "type": "collection"
+                    },
+                    {
+                        "type": "collection"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
