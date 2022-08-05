@@ -269,6 +269,9 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script src="{{ 'collection-tabs.js' | asset_url }}" defer="defer"></script>
+    {% comment %} Only Load in Collection Page {% endcomment %}
+    {%- if template.name == 'collection' -%}
+      <script src="{{ 'collection-tabs.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </body>
 </html>

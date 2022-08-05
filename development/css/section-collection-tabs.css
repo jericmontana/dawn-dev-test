@@ -1,21 +1,38 @@
+@import 'util/device.css';
+
+
 .collection-tabs{
-    *{
+    /* *{
         border: 1px dashed goldenrod;
-    }
+    } */
 
     .page-width{
         border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
     }
-    
+   
     /* For Collection Tab Styling */
     .collection-tab{
         position: relative;
         display: inline-block;
         cursor: pointer;
         
-    
+        @media --mobile{
+            &{
+                display: block;
+                width: 100%;
+            }
+        }
+
         &:not(:last-of-type){
             margin-right: 0.5rem;
+
+            @media --mobile{
+                &{
+                    margin-right: 0rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+    
         }
 
         /* For Underline */
@@ -59,5 +76,42 @@
             }
         }
     }
+
+    .collection-tabs--dropdown{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+
+        .icon{
+            width: 1.4rem;
+            height: auto;
+        }
+    }
+
+    /* Mobile Drowpdown */
+    @media --mobile{
+        .page-width{
+            position: relative;
+        }
+        .collection-tabs--wrapper{
+            position: absolute;
+            width: calc(100% - 3rem);
+            transform: translateY(-2rem);
+            background-color: #FFFFFF;
+            box-shadow: 0rem 0rem 3rem -0.5rem rgba(var(--color-base-accent-2),0.5);
+            z-index: 100;
+            visibility: hidden;
+            transition: transform var(--duration-default) ease-in-out;
+        }
+
+        #collection-tabs-input:checked ~ .collection-tabs--wrapper{
+            visibility: visible;
+            transform: translateY(0.5rem);
+        }
+    }
+
 }
 

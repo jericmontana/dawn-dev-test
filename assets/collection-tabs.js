@@ -68,6 +68,12 @@ collectionTabLinks.forEach((tab) => {
         // Prevent the default behavior
         event.preventDefault();
         
+        // Change Label innerHTML for Disclosure on Mobile Devices
+        document.querySelector(`#collection-name`).innerHTML = tab.dataset.collectiontitle;
+
+        // Close Disclosure
+        document.querySelector(`#collection-tabs-input`).checked = false;
+
         // Show Loader and Hide Collection Grid
         showHideLoader('show');
 
@@ -79,7 +85,7 @@ collectionTabLinks.forEach((tab) => {
         var metaTitle = tab.dataset.metatitle;
         document.title = metaTitle;
 
-        //Change the URL
+        // Change the URL
         changeurl(targetURL);
     })
 });

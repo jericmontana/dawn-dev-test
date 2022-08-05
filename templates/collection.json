@@ -4,15 +4,46 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collecion_image": false,
         "color_scheme": "background-1"
       }
     },
     "collection-tabs": {
       "type": "collection-tabs",
       "settings": {
-
-      }
+      },
+      "blocks":{
+        "collection_1":{
+          "type": "collection",
+          "settings":{
+            "collection":"all"
+          }
+        },
+        "collection_2":{
+          "type": "collection",
+          "settings":{
+            "collection":"all"
+          }
+        },
+        "collection_3":{
+          "type": "collection",
+          "settings":{
+            "collection":"all"
+          }
+        },
+        "collection_4":{
+          "type": "collection",
+          "settings":{
+            "collection":"all"
+          }
+        }
+      },
+      "block_order":[
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4"
+      ]
     },
     "product-grid": {
       "type": "main-collection-product-grid",

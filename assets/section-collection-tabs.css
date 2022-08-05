@@ -1,6 +1,6 @@
-.collection-tabs *{
+/* *{
         border: 1px dashed goldenrod;
-    }
+    } */
     .collection-tabs .page-width{
         border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
     }
@@ -11,9 +11,22 @@
         cursor: pointer;
 
     }
+    @media screen and (max-width: 749px){
+            .collection-tabs .collection-tab{
+                display: block;
+                width: 100%;
+            }
+        }
     .collection-tabs .collection-tab:not(:last-of-type){
             margin-right: 0.5rem;
+    
         }
+    @media screen and (max-width: 749px){
+                .collection-tabs .collection-tab:not(:last-of-type){
+                    margin-right: 0rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
     /* For Underline */
     .collection-tabs .collection-tab::before{
             content: "";
@@ -49,4 +62,49 @@
                 -o-object-fit: cover;
                    object-fit: cover;
             }
+    .collection-tabs .collection-tabs--dropdown{
+        cursor: pointer;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 1rem 2rem;
+    }
+    .collection-tabs .collection-tabs--dropdown .icon{
+            width: 1.4rem;
+            height: auto;
+        }
+    /* Mobile Drowpdown */
+    @media screen and (max-width: 749px){
+        .collection-tabs .page-width{
+            position: relative;
+        }
+        .collection-tabs .collection-tabs--wrapper{
+            position: absolute;
+            width: calc(100% - 3rem);
+            -webkit-transform: translateY(-2rem);
+                    transform: translateY(-2rem);
+            background-color: #FFFFFF;
+            -webkit-box-shadow: 0rem 0rem 3rem -0.5rem rgba(var(--color-base-accent-2),0.5);
+                    box-shadow: 0rem 0rem 3rem -0.5rem rgba(var(--color-base-accent-2),0.5);
+            z-index: 100;
+            visibility: hidden;
+            -webkit-transition: -webkit-transform var(--duration-default) ease-in-out;
+            transition: -webkit-transform var(--duration-default) ease-in-out;
+            transition: transform var(--duration-default) ease-in-out;
+            transition: transform var(--duration-default) ease-in-out, -webkit-transform var(--duration-default) ease-in-out;
+        }
+
+        .collection-tabs #collection-tabs-input:checked ~ .collection-tabs--wrapper{
+            visibility: visible;
+            -webkit-transform: translateY(0.5rem);
+                    transform: translateY(0.5rem);
+        }
+    }
 

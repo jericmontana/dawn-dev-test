@@ -3731,6 +3731,7 @@ details-disclosure > details {
 
 .ajax-loader{
     width: 100%;
+    padding: 5rem 0rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

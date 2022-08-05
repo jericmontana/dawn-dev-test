@@ -4,10 +4,12 @@
 
 <div class="collection-tabs collection-tabs--{{ section.id }}">
     <div class="page-width">
+        <input id="collection-tabs-input" type="checkbox" class="hidden">
+        <label class="collection-tabs--dropdown medium-hide large-up-hide h3" for="collection-tabs-input"><span id="collection-name">{{ collection.title | escape }}</span>{%- render 'icon-caret' -%}</label>
         <div class="collection-tabs--wrapper">
             {%- for block in collection_blocks -%}
-                <div class="collection-tab {% if forloop.first %}collection-tab--active{% endif %}">
-                    <a data-metatitle="{{ block.settings.collection.title | append: " — " | append: shop.name | escape }}" class="collection-tab__link link link--text full-unstyled-link uppercase" href="{{ block.settings.collection.url }}" alt="{{ block.settings.collection.title | append: ' Collection' }}" title="{{ block.settings.collection.title | append: ' Collection' }}">{{ block.settings.collection.title | escape }}</a>
+                <div class="collection-tab">
+                    <a data-collectiontitle="{{ block.settings.collection.title | escape }}" data-metatitle="{{ block.settings.collection.title | append: " — " | append: shop.name | escape }}" class="collection-tab__link link link--text full-unstyled-link uppercase" href="{{ block.settings.collection.url }}" alt="{{ block.settings.collection.title | append: ' Collection' }}" title="{{ block.settings.collection.title | append: ' Collection' }}">{{ block.settings.collection.title | escape }}</a>
                 </div>
             {%- endfor -%}
         </div>
