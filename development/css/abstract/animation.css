@@ -1,0 +1,70 @@
+/* loading dots */
+@keyframes loading-dots-fadein{
+    100%{
+        opacity:1;
+        filter:none
+    }
+}
+@keyframes loading-dots-first-dot{
+    100%{
+        transform:translate(1em);
+        opacity:1;
+        filter:none
+    }
+}
+@keyframes loading-dots-middle-dots{
+    100%{
+        transform:translate(1em)
+    }
+}
+@keyframes loading-dots-last-dot{
+    100%{
+        transform:translate(2em);
+        opacity:0;
+        filter:alpha(opacity=0)
+    }
+}
+
+.ajax-loader{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loading-dots{
+        margin-left: -1.5em;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        animation: loading-dots-fadein .5s linear forwards;
+
+        &__wrapper{
+            text-align: center;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .dots{
+            width: .5em;
+            height: .5em;
+            display: inline-block;
+            vertical-align: middle;
+            background: rgb(var(--color-base-accent-2));
+            border-radius: 50%;
+            margin: 0 .125em;
+            animation: loading-dots-middle-dots .5s linear infinite;
+
+            &:first-of-type{
+                animation: loading-dots-first-dot .5s linear infinite;
+                opacity: 0;
+                filter: alpha(opacity=0);
+                transform: translate(-1em);
+            }
+
+            &:last-of-type{
+                animation: loading-dots-last-dot .5s linear infinite;
+            }
+        }
+
+    }
+
+}

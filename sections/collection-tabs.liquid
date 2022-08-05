@@ -7,11 +7,10 @@
         <div class="collection-tabs--wrapper">
             {%- for block in collection_blocks -%}
                 <div class="collection-tab {% if forloop.first %}collection-tab--active{% endif %}">
-                    <a class="link link--text full-unstyled-link uppercase" href="{{ block.settings.collection.url }}" alt="{{ block.settings.collection.title | append: ' Collection' }}" title="{{ block.settings.collection.title | append: ' Collection' }}">{{ block.settings.collection.title | escape }}</a>
+                    <a data-metatitle="{{ block.settings.collection.title | append: " — " | append: shop.name | escape }}" class="collection-tab__link link link--text full-unstyled-link uppercase" href="{{ block.settings.collection.url }}" alt="{{ block.settings.collection.title | append: ' Collection' }}" title="{{ block.settings.collection.title | append: ' Collection' }}">{{ block.settings.collection.title | escape }}</a>
                 </div>
             {%- endfor -%}
         </div>
-        
     </div>
 </div>
 

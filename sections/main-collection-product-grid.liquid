@@ -82,6 +82,21 @@
       </aside>
     {%- endif -%}
 
+    {% comment %} This is for loader {% endcomment %}
+    <div class="collection-loader hidden">
+      <noscript>You need to enable JavaScript to properly run this app.</noscript>
+      <div class="ajax-loader">
+          <div class="loading-dots__wrapper">
+              <div class="loading-dots">
+                  <div class="dots"></div>
+                  <div class="dots"></div>
+                  <div class="dots"></div>
+                  <div class="dots"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
     <div class="product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
@@ -97,7 +112,7 @@
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
-    
+            
             <ul id="product-grid" data-id="{{ section.id }}" class="
               grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
               grid--{{ section.settings.columns_desktop }}-col-desktop">
