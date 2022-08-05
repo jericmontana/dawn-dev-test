@@ -12,33 +12,33 @@
       "type": "collection-tabs",
       "settings": {
       },
-      "blocks":{
-        "collection_1":{
+      "blocks": {
+        "collection_1": {
           "type": "collection",
-          "settings":{
-            "collection":"all"
+          "settings": {
+            "collection": "all"
           }
         },
-        "collection_2":{
+        "collection_2": {
           "type": "collection",
-          "settings":{
-            "collection":"all"
+          "settings": {
+            "collection": "all"
           }
         },
-        "collection_3":{
+        "collection_3": {
           "type": "collection",
-          "settings":{
-            "collection":"all"
+          "settings": {
+            "collection": "all"
           }
         },
-        "collection_4":{
+        "collection_4": {
           "type": "collection",
-          "settings":{
-            "collection":"all"
+          "settings": {
+            "collection": "all"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "collection_1",
         "collection_2",
         "collection_3",

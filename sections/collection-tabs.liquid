@@ -17,45 +17,44 @@
 </div>
 
 {% schema %}
-    {
-        "name": "Collection Tabs",
-        "tag": "section",
-        "settings": [
-        
-        ],
-        "blocks":[
-            {
-                "type": "collection",
-                "name": "Collection",
-                "settings": [
-                    {
-                        "type": "collection",
-                        "id": "collection",
-                        "label": "Collection"
-                    }
-                ]
-            }
+{
+  "name": "Collection Tabs",
+  "tag": "section",
+  "settings": [
 
-        ],
-        "presets":[
-            {
-                "name": "Collection Tabs",
-                "category": "a",
-                "blocks":[
-                    {
-                        "type": "collection"
-                    },
-                    {
-                        "type": "collection"
-                    },
-                    {
-                        "type": "collection"
-                    },
-                    {
-                        "type": "collection"
-                    }
-                ]
-            }
-        ]
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
     }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tabs",
+      "category": "a",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
